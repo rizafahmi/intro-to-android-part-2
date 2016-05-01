@@ -17,6 +17,7 @@ public class FunFactsActivity extends AppCompatActivity {
     private RelativeLayout mRelativeLayout;
 
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,8 @@ public class FunFactsActivity extends AppCompatActivity {
                 //Update the screen with our dynamic fact
                 String fact = mFactBook.getFact();
                 mTextView.setText(fact);
-                mRelativeLayout.setBackgroundColor(Color.RED);
+                int color = mColorWheel.getColor();
+                mRelativeLayout.setBackgroundColor(color);
             }
         };
 
