@@ -1,9 +1,11 @@
 package com.elixirdose.funfacts;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -12,6 +14,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
     private Button mButton;
     private TextView mTextView;
+    private RelativeLayout mRelativeLayout;
 
     private FactBook mFactBook = new FactBook();
 
@@ -22,6 +25,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
         mButton = (Button) findViewById(R.id.button);
         mTextView = (TextView) findViewById(R.id.textView);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -30,6 +34,7 @@ public class FunFactsActivity extends AppCompatActivity {
                 //Update the screen with our dynamic fact
                 String fact = mFactBook.getFact();
                 mTextView.setText(fact);
+                mRelativeLayout.setBackgroundColor(Color.RED);
             }
         };
 
